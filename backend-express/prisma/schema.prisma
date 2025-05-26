@@ -1,0 +1,30 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model PredictRecord {
+  id                      String  @id @default(uuid())
+  income                 Int
+  fixed_expenses         Int
+  weekly_food_spending   Int
+  weekly_transport_spending Int
+  subscription_services_count Int
+  employment_status      String
+  age                    Int
+  last_month_spending    Int
+  savings_last_month     Int
+  target_next_month_spending Int
+  saving_suggestion      String
+}
