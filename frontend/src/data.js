@@ -52,18 +52,18 @@ export const segmentQuestion = [
     ],
   },
   {
-    title: "Pengeluaran Bulanan Sehari-hari",
-    desc: "Pengeluaran untuk makanan dan transportasi bulanan mencerminkan kebutuhan dasar individu dan menunjukkan efisiensi dalam mengelola pengeluaran rutin sehari-hari.",
+    title: "Pengeluaran Mingguan Sehari-hari",
+    desc: "Pengeluaran untuk makanan dan transportasi mingguan mencerminkan kebutuhan dasar individu dan menunjukkan efisiensi dalam mengelola pengeluaran rutin sehari-hari.",
     input: [
       {
-        label: "Berapa pengeluaran Anda untuk makanan setiap bulan?",
+        label: "Berapa pengeluaran Anda untuk makanan setiap minggu?",
         type: "number",
         name: "weekly_food_spending",
         contoh : "150000",
         satuan : "Rp. ",
       },
       {
-        label: "Berapa pengeluaran Anda untuk transportasi setiap bulan?",
+        label: "Berapa pengeluaran Anda untuk transportasi setiap minggu?",
         type: "number",
         name: "weekly_transport_spending",
         contoh : "100000",
