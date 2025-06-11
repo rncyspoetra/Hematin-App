@@ -59,8 +59,7 @@ def predict():
     except Exception as e:
         return jsonify({
             "message": "Internal server error",
-            "error": str(e)
-        }), 500
+            "error": str(e)}),500
 
 
 if __name__ == '__main__':
