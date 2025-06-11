@@ -28,6 +28,7 @@ Akses di: http://localhost:5173
 cd backend-express
 npm install
 npx prisma generate
+npx prisma db push
 npm start
 ```
 Akses di: http://localhost:3000
