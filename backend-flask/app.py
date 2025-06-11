@@ -2,8 +2,8 @@ from flask import Flask, request, jsonify
 from flask_cors import CORS
 import pandas as pd 
 import joblib 
-from tensorflow.keras.models import
-load_model
+from tensorflow.keras.models
+import load_model_load
 
 app = Flask(__name__)
 CORS(app)
