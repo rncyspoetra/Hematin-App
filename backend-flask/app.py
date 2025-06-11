@@ -3,7 +3,7 @@ from flask_cors import CORS
 import pandas as pd 
 import joblib 
 from tensorflow.keras.models
-import load_model_load
+import load_model
 
 app = Flask(__name__)
 CORS(app)
