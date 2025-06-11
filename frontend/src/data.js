@@ -7,7 +7,7 @@ export const segmentQuestion = [
         label: "Apa status pekerjaan Anda saat ini?",
         type: "select",
         name: "employment_status",
-        options: ["Student", "Freelance", "Part-Time", "Full-Time", "Contract"],
+        options: ["Student", "Freelance", "Part-time", "Full-time", "Contract", "Businessman"],
       },
       {
         label: "Berapa usia Anda saat ini?",

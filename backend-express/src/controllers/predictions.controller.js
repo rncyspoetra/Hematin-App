@@ -17,9 +17,6 @@ const getPredictionById = async (req, res) => {
 
 const createPrediction = async (req, res) => {
   try {
-    const target_next_month_spending = 12;
-    const saving_suggestion = "AA";
-
     const {
       income,
       fixed_expenses,
@@ -31,6 +28,15 @@ const createPrediction = async (req, res) => {
       last_month_spending,
       savings_last_month
     } = req.body;
+
+    if (
+      income === undefined || fixed_expenses === undefined || weekly_food_spending === undefined ||
+      weekly_transport_spending === undefined || subscription_services_count === undefined ||
+      !employment_status || age === undefined || last_month_spending === undefined ||
+      savings_last_month === undefined
+    ) {
+      return errorResponse(res, 400, "Semua field wajib diisi.");
+    }
 
     const predictionData = {
       income: Number(income),
@@ -46,7 +52,7 @@ const createPrediction = async (req, res) => {
 
     const response = await axios.post('http://localhost:9000/predict', predictionData);
 
-    const result = {...predictionData, ...response.data.data}
+    const result = { ...predictionData, ...response.data.data };
     const prediction = await PredictionService.createPrediction(result);
     return successResponse(res, 201, 'Prediction created successfully', prediction);
   } catch (error) {
@@ -54,6 +60,7 @@ const createPrediction = async (req, res) => {
     return errorResponse(res, 500, 'Internal Server Error', error.message);
   }
 };
+
 
 module.exports = {
   getPredictionById,

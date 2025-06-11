@@ -25,6 +25,6 @@ model PredictRecord {
   age                    Int
   last_month_spending    Int
   savings_last_month     Int
-  target_next_month_spending Int
+  next_month_spending_prediction Int
   saving_suggestion      String
 }

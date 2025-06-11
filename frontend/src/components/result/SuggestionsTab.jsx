@@ -9,21 +9,41 @@ import {
   CardDescription,
 } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { TrendingDown } from "lucide-react";
+import { TrendingDown, TrendingUp } from "lucide-react";
 
 const SuggestionsTab = ({ data }) => {
   const finance = calculateFinances(data);
 
   return (
     <>
-      <Alert className="bg-green-50 border-green-200">
-        <TrendingDown className="h-5 w-5 text-green-600" />
-        <AlertTitle className="text-green-800">Potensi Penghematan</AlertTitle>
-        <AlertDescription className="text-green-700">
-          Dengan mengikuti saran di bawah, Anda berpotensi menghemat hingga{" "}
-          {formatRupiah(finance.savingAmount)} setiap bulan.
-        </AlertDescription>
-      </Alert>
+      {finance?.next_month_spending_prediction >
+      finance?.last_month_spending ? (
+        // ALERT MERAH – Pengeluaran Naik
+        <Alert className="bg-red-50 border-red-200">
+          <TrendingUp className="h-5 w-5 text-red-600" />
+          <AlertTitle className="text-red-800">
+            Peringatan Pengeluaran
+          </AlertTitle>
+          <AlertDescription className="text-red-700">
+            Prediksi pengeluaran bulan depan (
+            {formatRupiah(finance.next_month_spending_prediction)}) lebih tinggi
+            dari bulan sebelumnya ({formatRupiah(finance.last_month_spending)}).
+            Pertimbangkan untuk menyesuaikan rencana pengeluaran Anda.
+          </AlertDescription>
+        </Alert>
+      ) : (
+        // ALERT HIJAU – Potensi Penghematan
+        <Alert className="bg-green-50 border-green-200">
+          <TrendingDown className="h-5 w-5 text-green-600" />
+          <AlertTitle className="text-green-800">
+            Potensi Penghematan
+          </AlertTitle>
+          <AlertDescription className="text-green-700">
+            Dengan mengikuti saran di bawah, Anda berpotensi menghemat hingga{" "}
+            {formatRupiah(finance.savingAmount)} setiap bulan.
+          </AlertDescription>
+        </Alert>
+      )}
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
         <Card className="border-l-4 border-green-500">
@@ -67,12 +87,12 @@ const SuggestionsTab = ({ data }) => {
                   Prediksi Pengeluaran
                 </span>
                 <span className="text-sm font-medium">
-                  {formatRupiah(finance.target_next_month_spending)}
+                  {formatRupiah(finance.next_month_spending_prediction)}
                 </span>
               </div>
               <Progress
                 value={
-                  (finance.target_next_month_spending /
+                  (finance.next_month_spending_prediction /
                     finance.last_month_spending) *
                   100
                 }

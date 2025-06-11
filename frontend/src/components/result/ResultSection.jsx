@@ -4,7 +4,6 @@ import axios from "axios";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import SkeletonResult from "./SkeletonResult";
 import SummaryCards from "./SummaryCards";
-import OverviewTab from "./OverviewTab";
 import ExpensesTab from "./ExpensesTab";
 import SuggestionsTab from "./SuggestionsTab";
 import NotFoundResult from "./NotFoundResult";

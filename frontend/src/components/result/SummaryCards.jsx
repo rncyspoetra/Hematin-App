@@ -32,7 +32,7 @@ const SummaryCards = ({ data }) => {
         </CardHeader>
         <CardContent>
           <div className="text-2xl font-bold text-gray-900 mb-2">
-            {formatRupiah(finance.target_next_month_spending)}
+            {formatRupiah(finance.next_month_spending_prediction)}
           </div>
           <div className="flex items-center text-sm">
             {finance.isSavingFromLastMonth ? (

@@ -160,7 +160,7 @@ const QuestionSection = () => {
               <button
                 type="button"
                 onClick={handleBack}
-                className="font-semibold flex items-center gap-2 px-3 py-2 bg-[#f9f9f9] text-[#5AA9E6] rounded-md border-2 border-[#5AA9E6] hover:bg-[#5AA9E6] hover:border-transparent hover:text-[#f9f9f9] focus:outline-none"
+                className="font-semibold flex items-center gap-2 px-3 py-2 bg-[#f9f9f9] text-[#5AA9E6] rounded-md border-2 border-[#5AA9E6] hover:bg-[#5AA9E6] hover:border-transparent hover:text-[#f9f9f9] cursor-pointer"
               >
                 <ArrowLeftIcon className="w-5 h-5" />
                 Kembali
@@ -170,7 +170,7 @@ const QuestionSection = () => {
             <button
               type="button"
               onClick={handleNext}
-              className="font-semibold flex items-center gap-2 px-3 py-2 bg-[#5AA9E6] text-white rounded-md border-2 border-transparent hover:bg-[#f9f9f9] hover:border-[#5AA9E6] hover:text-[#5AA9E6] focus:outline-none"
+              className="font-semibold flex items-center gap-2 px-3 py-2 bg-[#5AA9E6] text-white rounded-md border-2 border-transparent hover:bg-[#f9f9f9] hover:border-[#5AA9E6] hover:text-[#5AA9E6] cursor-pointer"
             >
               {step === segmentQuestion.length - 1 ? "Submit" : "Lanjutkan"}
               <ArrowRightIcon className="w-5 h-5" />

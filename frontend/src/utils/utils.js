@@ -12,20 +12,20 @@ export const calculateFinances = (data) => {
     income,
     weekly_food_spending,
     weekly_transport_spending,
-    target_next_month_spending,
+    next_month_spending_prediction,
     last_month_spending,
   } = data;
 
   const monthlyFood = weekly_food_spending * 4;
   const monthlyTransport = weekly_transport_spending * 4;
 
-  const potentialSaving = income - target_next_month_spending;
+  const potentialSaving = income - next_month_spending_prediction;
   const savingRate = (potentialSaving / income) * 100;
 
   const isSavingFromLastMonth =
-    target_next_month_spending < last_month_spending;
+    next_month_spending_prediction < last_month_spending;
   const savingAmount = Math.abs(
-    target_next_month_spending - last_month_spending
+    next_month_spending_prediction - last_month_spending
   );
   const savingPercentage = (savingAmount / last_month_spending) * 100;
 

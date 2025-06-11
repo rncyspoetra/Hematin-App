@@ -64,7 +64,7 @@ const ExpensesTab = ({ data }) => {
                   dataKey="value"
                   label={
                     !isMobile
-                      ? ({ name, percent }) =>
+                      ? ({name, percent }) =>
                           `${name} ${(percent * 100).toFixed(0)}%`
                       : false
                   }

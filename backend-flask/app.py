@@ -36,7 +36,7 @@ def predict():
             "employment_status": data["employment_status"],
             "age": data["age"],
             "last_month_spending": data["last_month_spending"],
-             "savings_last_month": data["savings_last_month"]
+            "savings_last_month": data["savings_last_month"]
         }])
 
         # Transformasi dan prediksi
