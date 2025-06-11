@@ -1,2 +1,6 @@
-Flask==2.3.2
-Flask-Cors==3.0.10
+Flask
+Flask-Cors
+pandas
+scikit-learn==1.6.1
+tensorflow
+dill
